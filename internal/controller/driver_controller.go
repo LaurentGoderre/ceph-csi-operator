@@ -1463,7 +1463,7 @@ func (r *driverReconcile) reconcileNodePluginDaemonSet() error {
 								SecurityContext: &corev1.SecurityContext{
 									Privileged: ptr.To(true),
 									Capabilities: &corev1.Capabilities{
-										Add:  []corev1.Capability{"SYS_ADMIN"},
+										Add:  []corev1.Capability{"SYS_ADMIN", "IPC_LOCK"},
 										Drop: []corev1.Capability{capabilityAll},
 									},
 									AllowPrivilegeEscalation: ptr.To(true),
